@@ -1,6 +1,12 @@
 <h1>This is your profile page!</h1>
 
 <%= @user.first_name %>
+<br>
 <%= @user.last_name %>
+<br>
 <%= @user.email %>
+<br>
 <%= @user.location %>
+<br>
+
+<%= link_to 'Logout', logout_path %>

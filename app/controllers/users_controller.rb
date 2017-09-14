@@ -9,24 +9,18 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to '/show'
+      redirect_to '/profile'
     else
       render 'new'
     end
   end
 
   def show
+    byebug
+    @user = User.find(session[:user_id])
   end
 
   def edit
-  end
-
-  def login
-  end
-
-  def logout
-    session.clear
-    redirect_to 'welcome/index'
   end
 
   private
